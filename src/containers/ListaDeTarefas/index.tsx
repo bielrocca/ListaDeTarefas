@@ -29,10 +29,10 @@ const ListaDeTarefas = () => (
       {tarefas.map((t) => (
         <li key={t.titulo}>
           <Tarefa
-            descricao={t.descricao}
             titulo={t.titulo}
-            status={t.status}
             prioridade={t.prioridade}
+            status={t.status}
+            descricao={t.descricao}
           />
         </li>
       ))}
