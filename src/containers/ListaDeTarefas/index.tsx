@@ -11,7 +11,7 @@ const tarefas = [
   {
     titulo: 'Pagar Academia',
     descricao: 'Até 29/09',
-    prioridade: 'importante',
+    prioridade: 'urgente',
     status: 'pendente'
   },
   {
