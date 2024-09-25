@@ -19,7 +19,7 @@ function retornaCorDeFundo(props: TagProps): string {
     if (props.status === enums.Status.EM_ANDAMENTO) return variaveis.amarelo
   }
 
-  return '#fcfcfc'
+  return '#808080'
 }
 
 export const Card = styled.div`
@@ -58,7 +58,7 @@ export const Descricao = styled.textarea`
   margin-top: 16px;
   resize: none;
   border: none;
-  background-color: tranparent;
+  background-color: #fcfcfc;
 `
 
 export const BarraAcoes = styled.div`
