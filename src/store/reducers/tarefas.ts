@@ -2,57 +2,50 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import Tarefa from '../../models/Tarefa'
 import * as enums from '../../utils/enums/Tarefa'
 
-// Define the type for the state of the application
+type TarefasState = {
+  itens: Tarefa[]
+}
+
+const initialState: TarefasState = {
+  itens: [
+    {
+      id: 1,
+      titulo: 'Estudar Python',
+      prioridade: enums.Prioridade.IMPORTANTE,
+      status: enums.Status.PENDENTE,
+      descricao: 'Rever conceitos lógicos e controle de array para cadastros'
+    },
+    {
+      id: 2,
+      titulo: 'Pagar academia',
+      prioridade: enums.Prioridade.URGENTE,
+      status: enums.Status.PENDENTE,
+      descricao: 'Fatura aberta até 29/09'
+    },
+    {
+      id: 3,
+      titulo: 'Estudar para prova | Desenvolvimento Web',
+      prioridade: enums.Prioridade.IMPORTANTE,
+      status: enums.Status.PENDENTE,
+      descricao: 'Requisitos para prova --> Estudar tudo relacionado ao HTML'
+    },
+    {
+      id: 4,
+      titulo: 'Estudar para prova | Programação Orientada a Objetos',
+      prioridade: enums.Prioridade.IMPORTANTE,
+      status: enums.Status.PENDENTE,
+      descricao:
+        'Rever conceitos lógicos e orientações a objetos / Revisar também códigos explicativos de POO'
+    }
+  ]
+}
 
 const tarefasSlice = createSlice({
   name: 'tarefas',
-  initialState: [
-    new Tarefa(
-      1,
-      'Estudar Python',
-      enums.Prioridade.IMPORTANTE,
-      enums.Status.PENDENTE,
-      ''
-    ),
-    new Tarefa(
-      2,
-      'Pagar Academia',
-      enums.Prioridade.URGENTE,
-      enums.Status.PENDENTE,
-      'Pagar até dia 29/09'
-    ),
-    new Tarefa(
-      3,
-      'Estudar a biblioteca do React',
-      enums.Prioridade.IMPORTANTE,
-      enums.Status.CONCLUIDA,
-      ''
-    ),
-    new Tarefa(
-      4,
-      'Estudar para prova de Cloud Computing',
-      enums.Prioridade.IMPORTANTE,
-      enums.Status.PENDENTE,
-      'Estudar conceitos de SaaS, PaaS e IaaS - Estudar sobre virtualização - Estudar sobre a origem da Cloud e sua funcionalidade'
-    ),
-    new Tarefa(
-      5,
-      'Ir para faculdade',
-      enums.Prioridade.NORMAL,
-      enums.Status.PENDENTE,
-      'Para fazer prova'
-    ),
-    new Tarefa(
-      6,
-      'Estudar conceitos do Redux',
-      enums.Prioridade.IMPORTANTE,
-      enums.Status.EM_ANDAMENTO,
-      ''
-    )
-  ],
+  initialState,
   reducers: {
     remover: (state, action: PayloadAction<number>) => {
-      state = state.filter((tarefa) => tarefa.id !== action.payload)
+      state.itens = state.itens.filter((tarefa) => tarefa.id !== action.payload)
     }
   }
 })
