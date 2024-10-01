@@ -7,37 +7,7 @@ type TarefasState = {
 }
 
 const initialState: TarefasState = {
-  itens: [
-    {
-      id: 1,
-      titulo: 'Estudar Python',
-      prioridade: enums.Prioridade.IMPORTANTE,
-      status: enums.Status.PENDENTE,
-      descricao: 'Rever conceitos lógicos e controle de array para cadastros'
-    },
-    {
-      id: 2,
-      titulo: 'Pagar academia',
-      prioridade: enums.Prioridade.URGENTE,
-      status: enums.Status.CONCLUIDA,
-      descricao: 'Fatura aberta até 29/09'
-    },
-    {
-      id: 3,
-      titulo: 'Estudar para prova | Desenvolvimento Web',
-      prioridade: enums.Prioridade.IMPORTANTE,
-      status: enums.Status.PENDENTE,
-      descricao: 'Requisitos para prova --> Estudar tudo relacionado ao HTML'
-    },
-    {
-      id: 4,
-      titulo: 'Estudar para prova | Programação Orientada a Objetos',
-      prioridade: enums.Prioridade.IMPORTANTE,
-      status: enums.Status.PENDENTE,
-      descricao:
-        'Rever conceitos lógicos e orientações a objetos / Revisar também códigos explicativos de POO'
-    }
-  ]
+  itens: []
 }
 
 const tarefasSlice = createSlice({
