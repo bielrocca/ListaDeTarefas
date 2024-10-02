@@ -42,7 +42,7 @@ const ListaDeTarefas = () => {
     if (criterio === 'todas') {
       mensagem = `${quantidade} tarefa(s) encontrada(s) como: todas ${complemento}`
     } else {
-      mensagem = `${quantidade} tarefa(s) encontrada(s) como: "${`${criterio}=${valor}`}" ${complemento}`
+      mensagem = `${quantidade} tarefa(s) encontrada(s) como: "${`${valor}`}" ${complemento}`
     }
 
     return mensagem
